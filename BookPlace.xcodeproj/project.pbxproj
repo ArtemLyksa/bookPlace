@@ -7,21 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B2C5625A2FAF7E4DB594D6D /* Pods_BookPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67029EA865036AE29CDC8DA8 /* Pods_BookPlace.framework */; };
 		FED2C9CA1E702FDA00C8078B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9C91E702FDA00C8078B /* AppDelegate.swift */; };
-		FED2C9CC1E702FDA00C8078B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9CB1E702FDA00C8078B /* ViewController.swift */; };
 		FED2C9CF1E702FDA00C8078B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED2C9CD1E702FDA00C8078B /* Main.storyboard */; };
 		FED2C9D11E702FDA00C8078B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FED2C9D01E702FDA00C8078B /* Assets.xcassets */; };
 		FED2C9D41E702FDA00C8078B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED2C9D21E702FDA00C8078B /* LaunchScreen.storyboard */; };
+		FED2C9E31E7030FE00C8078B /* SignInConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9DC1E7030FE00C8078B /* SignInConfigurator.swift */; };
+		FED2C9E41E7030FE00C8078B /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9DD1E7030FE00C8078B /* SignInInteractor.swift */; };
+		FED2C9E51E7030FE00C8078B /* SignInModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9DE1E7030FE00C8078B /* SignInModels.swift */; };
+		FED2C9E61E7030FE00C8078B /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9DF1E7030FE00C8078B /* SignInPresenter.swift */; };
+		FED2C9E71E7030FE00C8078B /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9E01E7030FE00C8078B /* SignInRouter.swift */; };
+		FED2C9E81E7030FE00C8078B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9E11E7030FE00C8078B /* SignInViewController.swift */; };
+		FED2C9E91E7030FE00C8078B /* SignInWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9E21E7030FE00C8078B /* SignInWorker.swift */; };
+		FED2C9F31E7045D800C8078B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FED2C9F21E7045D800C8078B /* GoogleService-Info.plist */; };
+		FED2C9F61E70513600C8078B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9F51E70513600C8078B /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BC2029FDBF9BFD961683B8C /* Pods-BookPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookPlace.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookPlace/Pods-BookPlace.release.xcconfig"; sourceTree = "<group>"; };
+		67029EA865036AE29CDC8DA8 /* Pods_BookPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3224D648F5E1D2864D386DE /* Pods-BookPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookPlace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookPlace/Pods-BookPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		FED2C9C61E702FDA00C8078B /* BookPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED2C9C91E702FDA00C8078B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FED2C9CB1E702FDA00C8078B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FED2C9CE1E702FDA00C8078B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FED2C9D01E702FDA00C8078B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FED2C9D31E702FDA00C8078B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FED2C9D51E702FDA00C8078B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FED2C9DC1E7030FE00C8078B /* SignInConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInConfigurator.swift; sourceTree = "<group>"; };
+		FED2C9DD1E7030FE00C8078B /* SignInInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
+		FED2C9DE1E7030FE00C8078B /* SignInModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInModels.swift; sourceTree = "<group>"; };
+		FED2C9DF1E7030FE00C8078B /* SignInPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		FED2C9E01E7030FE00C8078B /* SignInRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
+		FED2C9E11E7030FE00C8078B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		FED2C9E21E7030FE00C8078B /* SignInWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWorker.swift; sourceTree = "<group>"; };
+		FED2C9F21E7045D800C8078B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FED2C9F51E70513600C8078B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B2C5625A2FAF7E4DB594D6D /* Pods_BookPlace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ABE90E7DF6E554B8E91F1F1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67029EA865036AE29CDC8DA8 /* Pods_BookPlace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B808AB08F2CB5B5020B22303 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3224D648F5E1D2864D386DE /* Pods-BookPlace.debug.xcconfig */,
+				2BC2029FDBF9BFD961683B8C /* Pods-BookPlace.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FED2C9BD1E702FDA00C8078B = {
 			isa = PBXGroup;
 			children = (
 				FED2C9C81E702FDA00C8078B /* BookPlace */,
 				FED2C9C71E702FDA00C8078B /* Products */,
+				B808AB08F2CB5B5020B22303 /* Pods */,
+				ABE90E7DF6E554B8E91F1F1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +94,38 @@
 		FED2C9C81E702FDA00C8078B /* BookPlace */ = {
 			isa = PBXGroup;
 			children = (
+				FED2C9F41E70512900C8078B /* Models */,
+				FED2C9DB1E7030D300C8078B /* SignInScene */,
 				FED2C9C91E702FDA00C8078B /* AppDelegate.swift */,
-				FED2C9CB1E702FDA00C8078B /* ViewController.swift */,
 				FED2C9CD1E702FDA00C8078B /* Main.storyboard */,
 				FED2C9D01E702FDA00C8078B /* Assets.xcassets */,
 				FED2C9D21E702FDA00C8078B /* LaunchScreen.storyboard */,
 				FED2C9D51E702FDA00C8078B /* Info.plist */,
+				FED2C9F21E7045D800C8078B /* GoogleService-Info.plist */,
 			);
 			path = BookPlace;
+			sourceTree = "<group>";
+		};
+		FED2C9DB1E7030D300C8078B /* SignInScene */ = {
+			isa = PBXGroup;
+			children = (
+				FED2C9DC1E7030FE00C8078B /* SignInConfigurator.swift */,
+				FED2C9DD1E7030FE00C8078B /* SignInInteractor.swift */,
+				FED2C9DE1E7030FE00C8078B /* SignInModels.swift */,
+				FED2C9DF1E7030FE00C8078B /* SignInPresenter.swift */,
+				FED2C9E01E7030FE00C8078B /* SignInRouter.swift */,
+				FED2C9E11E7030FE00C8078B /* SignInViewController.swift */,
+				FED2C9E21E7030FE00C8078B /* SignInWorker.swift */,
+			);
+			name = SignInScene;
+			sourceTree = "<group>";
+		};
+		FED2C9F41E70512900C8078B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FED2C9F51E70513600C8078B /* User.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FED2C9D81E702FDA00C8078B /* Build configuration list for PBXNativeTarget "BookPlace" */;
 			buildPhases = (
+				FE2AF69FDCDC12AD0E5650EA /* [CP] Check Pods Manifest.lock */,
 				FED2C9C21E702FDA00C8078B /* Sources */,
 				FED2C9C31E702FDA00C8078B /* Frameworks */,
 				FED2C9C41E702FDA00C8078B /* Resources */,
+				B9AFB25CD80915DD7799688A /* [CP] Embed Pods Frameworks */,
+				8CFFF3C9525F1C8F63FC23FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +163,7 @@
 				TargetAttributes = {
 					FED2C9C51E702FDA00C8078B = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3HY885L7L9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FED2C9D41E702FDA00C8078B /* LaunchScreen.storyboard in Resources */,
+				FED2C9F31E7045D800C8078B /* GoogleService-Info.plist in Resources */,
 				FED2C9D11E702FDA00C8078B /* Assets.xcassets in Resources */,
 				FED2C9CF1E702FDA00C8078B /* Main.storyboard in Resources */,
 			);
@@ -131,13 +200,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8CFFF3C9525F1C8F63FC23FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookPlace/Pods-BookPlace-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9AFB25CD80915DD7799688A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookPlace/Pods-BookPlace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE2AF69FDCDC12AD0E5650EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FED2C9C21E702FDA00C8078B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FED2C9CC1E702FDA00C8078B /* ViewController.swift in Sources */,
+				FED2C9E81E7030FE00C8078B /* SignInViewController.swift in Sources */,
+				FED2C9E71E7030FE00C8078B /* SignInRouter.swift in Sources */,
+				FED2C9E31E7030FE00C8078B /* SignInConfigurator.swift in Sources */,
+				FED2C9E51E7030FE00C8078B /* SignInModels.swift in Sources */,
 				FED2C9CA1E702FDA00C8078B /* AppDelegate.swift in Sources */,
+				FED2C9E41E7030FE00C8078B /* SignInInteractor.swift in Sources */,
+				FED2C9E61E7030FE00C8078B /* SignInPresenter.swift in Sources */,
+				FED2C9F61E70513600C8078B /* User.swift in Sources */,
+				FED2C9E91E7030FE00C8078B /* SignInWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,11 +382,17 @@
 		};
 		FED2C9D91E702FDA00C8078B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3224D648F5E1D2864D386DE /* Pods-BookPlace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3HY885L7L9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BookPlace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AL.BookPlace;
+				PRODUCT_BUNDLE_IDENTIFIER = ritjs.bookPlace.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -270,11 +400,17 @@
 		};
 		FED2C9DA1E702FDA00C8078B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC2029FDBF9BFD961683B8C /* Pods-BookPlace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3HY885L7L9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BookPlace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AL.BookPlace;
+				PRODUCT_BUNDLE_IDENTIFIER = ritjs.bookPlace.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -299,6 +435,7 @@
 				FED2C9DA1E702FDA00C8078B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
