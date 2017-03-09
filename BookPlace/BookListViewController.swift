@@ -13,7 +13,7 @@ import UIKit
 
 protocol BookListViewControllerInput
 {
-    func displayBookList(viewModel: [BookList.GetBookList.ViewModel])
+    func displayBookList(viewModel: BookList.GetBookList.ViewModel)
     func displayBookImage(viewModel: BookList.GetBookImage.ViewModel)
 }
 
@@ -26,18 +26,20 @@ protocol BookListViewControllerOutput
 
 class BookListViewController: UIViewController, BookListViewControllerInput
 {
+    
     var output: BookListViewControllerOutput!
     var router: BookListRouter!
-    var dataSource: [BookList.GetBookList.ViewModel] = []
-    var images: [UIImage?]!
+    var dataSource: [Book] = []
     var heights = [IndexPath:CGFloat]()
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     // MARK: - Object lifecycle
     
     override func awakeFromNib()
     {
         super.awakeFromNib()
         BookListConfigurator.sharedInstance.configure(viewController: self)
+        tabBarController?.navigationItem.hidesBackButton = true
     }
     
     // MARK: - View lifecycle
@@ -49,24 +51,30 @@ class BookListViewController: UIViewController, BookListViewControllerInput
         tableView.estimatedRowHeight = 100.0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchBar.isHidden = false
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        searchBar.isHidden = true
         output.stopLoadingImage(request: BookList.StopLoadingImageProcess.Request())
     }
     
-    func displayBookList(viewModel: [BookList.GetBookList.ViewModel]) {
-        dataSource = viewModel
-        images = Array.init(repeating: nil, count: dataSource.count)
+    func displayBookList(viewModel: BookList.GetBookList.ViewModel) {
+        dataSource = viewModel.bookList
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
     
     func displayBookImage(viewModel: BookList.GetBookImage.ViewModel) {
-        images[viewModel.indexPath.row] = viewModel.image
+        guard let row = dataSource.index(of: viewModel.book) else { return }
+        let indexPath = IndexPath(row: row, section: 0)
         DispatchQueue.main.async {
-            if let visiblePaths = self.tableView.indexPathsForVisibleRows, visiblePaths.contains(viewModel.indexPath) {
-                self.tableView.reloadRows(at: [viewModel.indexPath], with: .none)
+            if let visiblePaths = self.tableView.indexPathsForVisibleRows, visiblePaths.contains(indexPath) {
+                self.tableView.reloadRows(at: [indexPath], with: .none)
             }
         }
     }
@@ -80,12 +88,12 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let bookCell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) as! BookTableViewCell
         let book = dataSource[indexPath.row]
-        bookCell.bookNameLabel.text = book.bookName
+        bookCell.bookNameLabel.text = book.name
         bookCell.bookAuthorLabel.text = book.authors
-        if let image = images[indexPath.row] {
+        if let image = book.image {
             bookCell.bookImageView.image = image
         } else {
-            output.getImage(request: BookList.GetBookImage.Request(imageURL: book.imageURL, indexPath: indexPath))
+            output.getImage(request: BookList.GetBookImage.Request(book: book))
         }
         return bookCell
     }
@@ -106,7 +114,7 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //TODO: Go to details scene
+        router.navigateToBookDetailsScene(fromIndexPath: indexPath)
     }
     
 

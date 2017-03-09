@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1B2C5625A2FAF7E4DB594D6D /* Pods_BookPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67029EA865036AE29CDC8DA8 /* Pods_BookPlace.framework */; };
+		FE627B361E71B5AE008F85A8 /* BookDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B2F1E71B5AE008F85A8 /* BookDetailsConfigurator.swift */; };
+		FE627B371E71B5AE008F85A8 /* BookDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B301E71B5AE008F85A8 /* BookDetailsInteractor.swift */; };
+		FE627B381E71B5AE008F85A8 /* BookDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B311E71B5AE008F85A8 /* BookDetailsModels.swift */; };
+		FE627B391E71B5AE008F85A8 /* BookDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B321E71B5AE008F85A8 /* BookDetailsPresenter.swift */; };
+		FE627B3A1E71B5AE008F85A8 /* BookDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B331E71B5AE008F85A8 /* BookDetailsRouter.swift */; };
+		FE627B3B1E71B5AE008F85A8 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B341E71B5AE008F85A8 /* BookDetailsViewController.swift */; };
+		FE627B3C1E71B5AE008F85A8 /* BookDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B351E71B5AE008F85A8 /* BookDetailsWorker.swift */; };
+		FEA209F31E71E6010056DC51 /* BookBacketConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209EC1E71E6010056DC51 /* BookBacketConfigurator.swift */; };
+		FEA209F41E71E6010056DC51 /* BookBacketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209ED1E71E6010056DC51 /* BookBacketInteractor.swift */; };
+		FEA209F51E71E6010056DC51 /* BookBacketModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209EE1E71E6010056DC51 /* BookBacketModels.swift */; };
+		FEA209F61E71E6010056DC51 /* BookBacketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209EF1E71E6010056DC51 /* BookBacketPresenter.swift */; };
+		FEA209F71E71E6010056DC51 /* BookBacketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209F01E71E6010056DC51 /* BookBacketRouter.swift */; };
+		FEA209F81E71E6010056DC51 /* BookBacketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209F11E71E6010056DC51 /* BookBacketViewController.swift */; };
+		FEA209F91E71E6010056DC51 /* BookBacketWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209F21E71E6010056DC51 /* BookBacketWorker.swift */; };
 		FED2C9CA1E702FDA00C8078B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9C91E702FDA00C8078B /* AppDelegate.swift */; };
 		FED2C9CF1E702FDA00C8078B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED2C9CD1E702FDA00C8078B /* Main.storyboard */; };
 		FED2C9D11E702FDA00C8078B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FED2C9D01E702FDA00C8078B /* Assets.xcassets */; };
@@ -37,6 +51,20 @@
 		2BC2029FDBF9BFD961683B8C /* Pods-BookPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookPlace.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookPlace/Pods-BookPlace.release.xcconfig"; sourceTree = "<group>"; };
 		67029EA865036AE29CDC8DA8 /* Pods_BookPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3224D648F5E1D2864D386DE /* Pods-BookPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookPlace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookPlace/Pods-BookPlace.debug.xcconfig"; sourceTree = "<group>"; };
+		FE627B2F1E71B5AE008F85A8 /* BookDetailsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsConfigurator.swift; sourceTree = "<group>"; };
+		FE627B301E71B5AE008F85A8 /* BookDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsInteractor.swift; sourceTree = "<group>"; };
+		FE627B311E71B5AE008F85A8 /* BookDetailsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsModels.swift; sourceTree = "<group>"; };
+		FE627B321E71B5AE008F85A8 /* BookDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsPresenter.swift; sourceTree = "<group>"; };
+		FE627B331E71B5AE008F85A8 /* BookDetailsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsRouter.swift; sourceTree = "<group>"; };
+		FE627B341E71B5AE008F85A8 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
+		FE627B351E71B5AE008F85A8 /* BookDetailsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsWorker.swift; sourceTree = "<group>"; };
+		FEA209EC1E71E6010056DC51 /* BookBacketConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketConfigurator.swift; sourceTree = "<group>"; };
+		FEA209ED1E71E6010056DC51 /* BookBacketInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketInteractor.swift; sourceTree = "<group>"; };
+		FEA209EE1E71E6010056DC51 /* BookBacketModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketModels.swift; sourceTree = "<group>"; };
+		FEA209EF1E71E6010056DC51 /* BookBacketPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketPresenter.swift; sourceTree = "<group>"; };
+		FEA209F01E71E6010056DC51 /* BookBacketRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketRouter.swift; sourceTree = "<group>"; };
+		FEA209F11E71E6010056DC51 /* BookBacketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketViewController.swift; sourceTree = "<group>"; };
+		FEA209F21E71E6010056DC51 /* BookBacketWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketWorker.swift; sourceTree = "<group>"; };
 		FED2C9C61E702FDA00C8078B /* BookPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED2C9C91E702FDA00C8078B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FED2C9CE1E702FDA00C8078B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +121,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FE627B2E1E71B53D008F85A8 /* BookDetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				FE627B2F1E71B5AE008F85A8 /* BookDetailsConfigurator.swift */,
+				FE627B301E71B5AE008F85A8 /* BookDetailsInteractor.swift */,
+				FE627B311E71B5AE008F85A8 /* BookDetailsModels.swift */,
+				FE627B321E71B5AE008F85A8 /* BookDetailsPresenter.swift */,
+				FE627B331E71B5AE008F85A8 /* BookDetailsRouter.swift */,
+				FE627B341E71B5AE008F85A8 /* BookDetailsViewController.swift */,
+				FE627B351E71B5AE008F85A8 /* BookDetailsWorker.swift */,
+			);
+			name = BookDetailScene;
+			sourceTree = "<group>";
+		};
+		FEA209EB1E71E5DE0056DC51 /* BookBacketScene */ = {
+			isa = PBXGroup;
+			children = (
+				FEA209EC1E71E6010056DC51 /* BookBacketConfigurator.swift */,
+				FEA209ED1E71E6010056DC51 /* BookBacketInteractor.swift */,
+				FEA209EE1E71E6010056DC51 /* BookBacketModels.swift */,
+				FEA209EF1E71E6010056DC51 /* BookBacketPresenter.swift */,
+				FEA209F01E71E6010056DC51 /* BookBacketRouter.swift */,
+				FEA209F11E71E6010056DC51 /* BookBacketViewController.swift */,
+				FEA209F21E71E6010056DC51 /* BookBacketWorker.swift */,
+			);
+			name = BookBacketScene;
+			sourceTree = "<group>";
+		};
 		FED2C9BD1E702FDA00C8078B = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +174,7 @@
 				FED2C9F41E70512900C8078B /* Models */,
 				FED2C9DB1E7030D300C8078B /* SignInScene */,
 				FED2C9F81E705CAE00C8078B /* TabBarScenes */,
+				FE627B2E1E71B53D008F85A8 /* BookDetailScene */,
 				FED2C9C91E702FDA00C8078B /* AppDelegate.swift */,
 				FED2C9CD1E702FDA00C8078B /* Main.storyboard */,
 				FED2C9D01E702FDA00C8078B /* Assets.xcassets */,
@@ -154,12 +211,13 @@
 		FED2C9F81E705CAE00C8078B /* TabBarScenes */ = {
 			isa = PBXGroup;
 			children = (
-				FED2C9F91E705CBD00C8078B /* BooksScene */,
+				FEA209EB1E71E5DE0056DC51 /* BookBacketScene */,
+				FED2C9F91E705CBD00C8078B /* BookListScene */,
 			);
 			name = TabBarScenes;
 			sourceTree = "<group>";
 		};
-		FED2C9F91E705CBD00C8078B /* BooksScene */ = {
+		FED2C9F91E705CBD00C8078B /* BookListScene */ = {
 			isa = PBXGroup;
 			children = (
 				FED2C9FC1E70637400C8078B /* BookListConfigurator.swift */,
@@ -171,7 +229,7 @@
 				FED2CA021E70637400C8078B /* BookListWorker.swift */,
 				FED2CA0A1E7063F400C8078B /* Cell */,
 			);
-			name = BooksScene;
+			name = BookListScene;
 			sourceTree = "<group>";
 		};
 		FED2CA0A1E7063F400C8078B /* Cell */ = {
@@ -318,21 +376,35 @@
 				FED2CA091E70637400C8078B /* BookListWorker.swift in Sources */,
 				FED2C9E81E7030FE00C8078B /* SignInViewController.swift in Sources */,
 				FED2CA041E70637400C8078B /* BookListInteractor.swift in Sources */,
+				FE627B371E71B5AE008F85A8 /* BookDetailsInteractor.swift in Sources */,
 				FED2C9E71E7030FE00C8078B /* SignInRouter.swift in Sources */,
 				FED2C9E31E7030FE00C8078B /* SignInConfigurator.swift in Sources */,
+				FEA209F51E71E6010056DC51 /* BookBacketModels.swift in Sources */,
+				FEA209F91E71E6010056DC51 /* BookBacketWorker.swift in Sources */,
 				FED2C9E51E7030FE00C8078B /* SignInModels.swift in Sources */,
+				FE627B3C1E71B5AE008F85A8 /* BookDetailsWorker.swift in Sources */,
 				FED2CA071E70637400C8078B /* BookListRouter.swift in Sources */,
 				FED2C9CA1E702FDA00C8078B /* AppDelegate.swift in Sources */,
 				FED2CA061E70637400C8078B /* BookListPresenter.swift in Sources */,
 				FED2CA0F1E7067C600C8078B /* SearchService.swift in Sources */,
+				FEA209F81E71E6010056DC51 /* BookBacketViewController.swift in Sources */,
+				FEA209F61E71E6010056DC51 /* BookBacketPresenter.swift in Sources */,
+				FE627B391E71B5AE008F85A8 /* BookDetailsPresenter.swift in Sources */,
+				FEA209F41E71E6010056DC51 /* BookBacketInteractor.swift in Sources */,
+				FE627B3B1E71B5AE008F85A8 /* BookDetailsViewController.swift in Sources */,
+				FE627B3A1E71B5AE008F85A8 /* BookDetailsRouter.swift in Sources */,
 				FED2CA0C1E70640800C8078B /* BookTableViewCell.swift in Sources */,
+				FEA209F31E71E6010056DC51 /* BookBacketConfigurator.swift in Sources */,
 				FED2CA111E706C2400C8078B /* Book.swift in Sources */,
+				FE627B361E71B5AE008F85A8 /* BookDetailsConfigurator.swift in Sources */,
 				FED2CA051E70637400C8078B /* BookListModels.swift in Sources */,
+				FE627B381E71B5AE008F85A8 /* BookDetailsModels.swift in Sources */,
 				FED2C9E41E7030FE00C8078B /* SignInInteractor.swift in Sources */,
 				FED2C9E61E7030FE00C8078B /* SignInPresenter.swift in Sources */,
 				FED2C9F61E70513600C8078B /* User.swift in Sources */,
 				FED2C9E91E7030FE00C8078B /* SignInWorker.swift in Sources */,
 				FED2CA031E70637400C8078B /* BookListConfigurator.swift in Sources */,
+				FEA209F71E71E6010056DC51 /* BookBacketRouter.swift in Sources */,
 				FED2CA081E70637400C8078B /* BookListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

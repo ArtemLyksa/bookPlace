@@ -19,13 +19,13 @@ struct SignIn
         }
         struct Response
         {
-            var user: User
+            var email: String!
+            var name:  String!
             
         }
         struct ViewModel
         {
-            var email: String?
-            var name:  String?
+            var user: User
         }
     }
 }

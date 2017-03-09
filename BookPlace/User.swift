@@ -8,14 +8,12 @@
 
 import Foundation
 
-class User: NSObject {
-    var name: String?
-    var email: String?
+class User {
+    var name: String!
+    var email: String!
+    var books: [Book] = []
     var accessToken: String?
     
-    
-    required init(name: String, email: String) {
-        self.name = name
-        self.email = email
-    }
+    static let sharedInstance = User()
+    private init() {}
 }

@@ -13,14 +13,13 @@ import UIKit
 
 protocol BookListPresenterInput
 {
-    func presentBookLits(response: BookList.GetBookList.Response)
+    func presentBookList(response: [BookList.GetBookList.Response])
     func presentBookImage(response:BookList.GetBookImage.Response)
-
 }
 
 protocol BookListPresenterOutput: class
 {
-    func displayBookList(viewModel: [BookList.GetBookList.ViewModel])
+    func displayBookList(viewModel: BookList.GetBookList.ViewModel)
     func displayBookImage(viewModel: BookList.GetBookImage.ViewModel)
 }
 
@@ -29,26 +28,22 @@ class BookListPresenter: BookListPresenterInput
     weak var output: BookListPresenterOutput!
     
     // MARK: - Presentation logic
-    func presentBookLits(response: BookList.GetBookList.Response) {
-        guard let books = response.bookList else { return }
-        var viewModels = [BookList.GetBookList.ViewModel()]
-        for book in books {
+    func presentBookList(response: [BookList.GetBookList.Response]) {
+        var books: [Book] = []
+        for respStruct in response {
             var authorString = String()
-            
-            for author in book.authors {
+            for author in respStruct.authors {
                 authorString = authorString.appendingFormat("%@\n", author)
             }
-            viewModels.append(BookList.GetBookList.ViewModel(bookName: book.name, authors: authorString, image: nil, imageURL: book.imageURL))
-//            viewModels.append(BookList.GetBookList.ViewModel(bookName: book.name, authors: authorString, image: book.image))
+            let book = Book(name: respStruct.bookName, authors: authorString, bookDescription: respStruct.description)
+            books.append(book)
+            guard let imageURL = respStruct.imageURL else { continue }
+            book.imageURL = imageURL
         }
-        output.displayBookList(viewModel: viewModels)
+        output.displayBookList(viewModel: BookList.GetBookList.ViewModel(bookList: books))
     }
     
     func presentBookImage(response:BookList.GetBookImage.Response) {
-        guard let image = UIImage.init(data: response.imageData) else {
-            output.displayBookImage(viewModel: BookList.GetBookImage.ViewModel(image: UIImage.init(), indexPath: response.indexPath))
-            return
-        }
-        output.displayBookImage(viewModel: BookList.GetBookImage.ViewModel(image: image, indexPath: response.indexPath))
+        output.displayBookImage(viewModel: BookList.GetBookImage.ViewModel(book: response.book))
     }
 }

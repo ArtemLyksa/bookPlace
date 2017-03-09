@@ -27,7 +27,10 @@ class SignInPresenter: SignInPresenterInput
     
     // MARK: - Presentation logic
     func presentUserInfo(response: SignIn.Authenticate.Response) {
-        let model = SignIn.Authenticate.ViewModel(email: response.user.email, name: response.user.name)
+        let user = User.sharedInstance
+        user.name = response.name
+        user.email = response.email
+        let model = SignIn.Authenticate.ViewModel(user: user)
         output.displayUserInfo(viewModel: model)
     }
 }

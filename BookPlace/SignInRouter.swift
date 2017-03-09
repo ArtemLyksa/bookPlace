@@ -22,7 +22,11 @@ class SignInRouter: SignInRouterInput
     
     // MARK: - Navigation
     func navigateToTabBarScene() {
-        viewController.performSegue(withIdentifier: "goToTabBarScene", sender: nil)
+//        viewController.performSegue(withIdentifier: "goToTabBarScene", sender: nil)
+        //
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "UITabBarController")
+        viewController.navigationController?.pushViewController(tabBarController, animated: true)
     }
     func navigateToSomewhere()
     {

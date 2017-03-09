@@ -54,8 +54,6 @@ class SignInViewController: UIViewController, SignInViewControllerInput
     }
     
     func displayUserInfo(viewModel: SignIn.Authenticate.ViewModel) {
-        print(viewModel.name)
-        print(viewModel.email)
         router.navigateToTabBarScene()
     }
 }

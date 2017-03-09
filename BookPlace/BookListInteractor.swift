@@ -14,13 +14,12 @@ import UIKit
 protocol BookListInteractorInput
 {
     func getBookList(request: BookList.GetBookList.Request)
-//    func getImage(request: BookList.GetBookImage.Request)
     func stopLoadingImage(request: BookList.StopLoadingImageProcess.Request)
 }
 
 protocol BookListInteractorOutput
 {
-    func presentBookLits(response: BookList.GetBookList.Response)
+    func presentBookList(response: [BookList.GetBookList.Response])
     func presentBookImage(response:BookList.GetBookImage.Response)
 }
 
@@ -41,46 +40,41 @@ class BookListInteractor: BookListInteractorInput
     
     func createBooksFromJson(json: [String:AnyObject])
     {
-        var books = [Book]()
+        var books:[BookList.GetBookList.Response] = []
         if let items = json["items"] as? [[String:AnyObject]] {
             for item in items {
                 guard let volumeInfo = item["volumeInfo"] as? [String : AnyObject] else { continue }
-                guard let book = createBookObject(volumeInfo: volumeInfo) else { continue }
-                books.append(book)
+                guard let title = volumeInfo["title"] as? String,
+                    let authors = volumeInfo["authors"] as? [String],
+                    let description = volumeInfo["description"] as? String else { continue }
+                
+                var imageURL: URL?
+                if let imageLinks = volumeInfo["imageLinks"] as? [String : AnyObject] {
+                    if let thumbnail = imageLinks["thumbnail"] as? String {
+                        imageURL = URL.init(string: thumbnail)
+                    }
+                    if let smallThumbnail = imageLinks["smallThumbnail"] as? String {
+                        imageURL = URL.init(string: smallThumbnail)
+                    }
+                    if let previewLink = imageLinks["previewLink"] as? String {
+                        imageURL = URL.init(string: previewLink)
+                    }
+                }
+                let response = BookList.GetBookList.Response(bookName: title, authors: authors, description: description, imageURL: imageURL)
+                books.append(response)
             }
         }
-        output.presentBookLits(response: BookList.GetBookList.Response(bookList: books))
-    }
-    
-    func createBookObject(volumeInfo: [String:AnyObject]) -> (Book?)
-    {
-        guard let title = volumeInfo["title"] as? String,
-            let authors = volumeInfo["authors"] as? [String],
-            let description = volumeInfo["description"] as? String else { return nil }
-        let book = Book.init(name: title, authors: authors, bookDescription: description)
-        
-        guard let imageLinks = volumeInfo["imageLinks"] as? [String : AnyObject] else { return book }
-        if let thumbnail = imageLinks["thumbnail"] as? String {
-            book.imageURL = URL.init(string: thumbnail)
-            return book
-        }
-        if let smallThumbnail = imageLinks["smallThumbnail"] as? String {
-            book.imageURL = URL.init(string: smallThumbnail)
-            return book
-        }
-        if let previewLink = imageLinks["previewLink"] as? String {
-            book.imageURL = URL.init(string: previewLink)
-            return book
-        }
-        return book
+        output.presentBookList(response: books)
     }
 
+
     func getImage(request: BookList.GetBookImage.Request) {
-        guard let imageURL = request.imageURL else { return }
+        guard let imageURL = request.book.imageURL else { return }
         let imgOperation = BlockOperation.init(block: {
             do {
                 let imageData = try Data.init(contentsOf: imageURL)
-                self.output.presentBookImage(response: BookList.GetBookImage.Response(imageData: imageData, indexPath: request.indexPath))
+                request.book.image = UIImage.init(data: imageData)
+                self.output.presentBookImage(response: BookList.GetBookImage.Response(book: request.book))
             } catch {
                 print("Data is nil")
             }

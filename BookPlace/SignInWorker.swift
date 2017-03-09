@@ -16,17 +16,17 @@ import GoogleSignIn
 class SignInWorker
 {
     
-    func signInWithFacebook(completionHandler: @escaping (User) -> ())
+    func signInWithFacebook(completionHandler: @escaping (_ name: String, _ email: String) -> ())
     {
         if (FBSDKAccessToken.current()) != nil {
             loginWithFB(completionHandler: { (response) in
-                completionHandler(User(name: response["name"]!, email: response["email"]!))
+                completionHandler(response["name"]!, response["email"]!)
             })
         } else {
             let loginManager = FBSDKLoginManager()
             loginManager.logIn(withReadPermissions: ["public_profile", "email"], from: nil) { (result, error) in
                 self.loginWithFB(completionHandler: { (response) in
-                    completionHandler(User(name: response["name"]!, email: response["email"]!))
+                    completionHandler(response["name"]!, response["email"]!)
                 })
             }
         }
@@ -44,7 +44,6 @@ class SignInWorker
     
     func signInWithGoogle()
     {
-//        GIDSignIn.sharedInstance().scopes = ["https://www.googleapis.com/auth/plus.login"];
         GIDSignIn.sharedInstance().signIn()
     }
 }

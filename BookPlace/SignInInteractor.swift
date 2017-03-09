@@ -31,8 +31,8 @@ class SignInInteractor: NSObject, SignInInteractorInput
     // MARK: - Business logic
     func signInWithFacebook(request: SignIn.Authenticate.Request) {
         worker = SignInWorker()
-        worker.signInWithFacebook { (user) in
-            let response = SignIn.Authenticate.Response(user: user)
+        worker.signInWithFacebook { (name, email) in
+            let response = SignIn.Authenticate.Response(email: name, name: email)
             self.output.presentUserInfo(response: response)
         }
     }
@@ -48,9 +48,7 @@ extension SignInInteractor: GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
-            let user = User(name: signIn.currentUser.profile.name, email: signIn.currentUser.profile.email)
-            UserDefaults.standard.set(signIn.currentUser.authentication.accessToken, forKey: "token")
-            let response = SignIn.Authenticate.Response(user: user)
+            let response = SignIn.Authenticate.Response(email: signIn.currentUser.profile.name, name: signIn.currentUser.profile.email)
             self.output.presentUserInfo(response: response)
         } else {
          print(error)
