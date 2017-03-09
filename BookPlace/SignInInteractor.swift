@@ -49,6 +49,7 @@ extension SignInInteractor: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
             let user = User(name: signIn.currentUser.profile.name, email: signIn.currentUser.profile.email)
+            UserDefaults.standard.set(signIn.currentUser.authentication.accessToken, forKey: "token")
             let response = SignIn.Authenticate.Response(user: user)
             self.output.presentUserInfo(response: response)
         } else {

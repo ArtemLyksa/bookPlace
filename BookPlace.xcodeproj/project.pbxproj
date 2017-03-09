@@ -21,6 +21,16 @@
 		FED2C9E91E7030FE00C8078B /* SignInWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9E21E7030FE00C8078B /* SignInWorker.swift */; };
 		FED2C9F31E7045D800C8078B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FED2C9F21E7045D800C8078B /* GoogleService-Info.plist */; };
 		FED2C9F61E70513600C8078B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9F51E70513600C8078B /* User.swift */; };
+		FED2CA031E70637400C8078B /* BookListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9FC1E70637400C8078B /* BookListConfigurator.swift */; };
+		FED2CA041E70637400C8078B /* BookListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9FD1E70637400C8078B /* BookListInteractor.swift */; };
+		FED2CA051E70637400C8078B /* BookListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9FE1E70637400C8078B /* BookListModels.swift */; };
+		FED2CA061E70637400C8078B /* BookListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9FF1E70637400C8078B /* BookListPresenter.swift */; };
+		FED2CA071E70637400C8078B /* BookListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA001E70637400C8078B /* BookListRouter.swift */; };
+		FED2CA081E70637400C8078B /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA011E70637400C8078B /* BookListViewController.swift */; };
+		FED2CA091E70637400C8078B /* BookListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA021E70637400C8078B /* BookListWorker.swift */; };
+		FED2CA0C1E70640800C8078B /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA0B1E70640800C8078B /* BookTableViewCell.swift */; };
+		FED2CA0F1E7067C600C8078B /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA0E1E7067C600C8078B /* SearchService.swift */; };
+		FED2CA111E706C2400C8078B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA101E706C2400C8078B /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +52,16 @@
 		FED2C9E21E7030FE00C8078B /* SignInWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWorker.swift; sourceTree = "<group>"; };
 		FED2C9F21E7045D800C8078B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FED2C9F51E70513600C8078B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FED2C9FC1E70637400C8078B /* BookListConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListConfigurator.swift; sourceTree = "<group>"; };
+		FED2C9FD1E70637400C8078B /* BookListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListInteractor.swift; sourceTree = "<group>"; };
+		FED2C9FE1E70637400C8078B /* BookListModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListModels.swift; sourceTree = "<group>"; };
+		FED2C9FF1E70637400C8078B /* BookListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListPresenter.swift; sourceTree = "<group>"; };
+		FED2CA001E70637400C8078B /* BookListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListRouter.swift; sourceTree = "<group>"; };
+		FED2CA011E70637400C8078B /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
+		FED2CA021E70637400C8078B /* BookListWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListWorker.swift; sourceTree = "<group>"; };
+		FED2CA0B1E70640800C8078B /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		FED2CA0E1E7067C600C8078B /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		FED2CA101E706C2400C8078B /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +114,10 @@
 		FED2C9C81E702FDA00C8078B /* BookPlace */ = {
 			isa = PBXGroup;
 			children = (
+				FED2CA0D1E70679D00C8078B /* Services */,
 				FED2C9F41E70512900C8078B /* Models */,
 				FED2C9DB1E7030D300C8078B /* SignInScene */,
+				FED2C9F81E705CAE00C8078B /* TabBarScenes */,
 				FED2C9C91E702FDA00C8078B /* AppDelegate.swift */,
 				FED2C9CD1E702FDA00C8078B /* Main.storyboard */,
 				FED2C9D01E702FDA00C8078B /* Assets.xcassets */,
@@ -124,8 +146,48 @@
 			isa = PBXGroup;
 			children = (
 				FED2C9F51E70513600C8078B /* User.swift */,
+				FED2CA101E706C2400C8078B /* Book.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FED2C9F81E705CAE00C8078B /* TabBarScenes */ = {
+			isa = PBXGroup;
+			children = (
+				FED2C9F91E705CBD00C8078B /* BooksScene */,
+			);
+			name = TabBarScenes;
+			sourceTree = "<group>";
+		};
+		FED2C9F91E705CBD00C8078B /* BooksScene */ = {
+			isa = PBXGroup;
+			children = (
+				FED2C9FC1E70637400C8078B /* BookListConfigurator.swift */,
+				FED2C9FD1E70637400C8078B /* BookListInteractor.swift */,
+				FED2C9FE1E70637400C8078B /* BookListModels.swift */,
+				FED2C9FF1E70637400C8078B /* BookListPresenter.swift */,
+				FED2CA001E70637400C8078B /* BookListRouter.swift */,
+				FED2CA011E70637400C8078B /* BookListViewController.swift */,
+				FED2CA021E70637400C8078B /* BookListWorker.swift */,
+				FED2CA0A1E7063F400C8078B /* Cell */,
+			);
+			name = BooksScene;
+			sourceTree = "<group>";
+		};
+		FED2CA0A1E7063F400C8078B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FED2CA0B1E70640800C8078B /* BookTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		FED2CA0D1E70679D00C8078B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FED2CA0E1E7067C600C8078B /* SearchService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,15 +315,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED2CA091E70637400C8078B /* BookListWorker.swift in Sources */,
 				FED2C9E81E7030FE00C8078B /* SignInViewController.swift in Sources */,
+				FED2CA041E70637400C8078B /* BookListInteractor.swift in Sources */,
 				FED2C9E71E7030FE00C8078B /* SignInRouter.swift in Sources */,
 				FED2C9E31E7030FE00C8078B /* SignInConfigurator.swift in Sources */,
 				FED2C9E51E7030FE00C8078B /* SignInModels.swift in Sources */,
+				FED2CA071E70637400C8078B /* BookListRouter.swift in Sources */,
 				FED2C9CA1E702FDA00C8078B /* AppDelegate.swift in Sources */,
+				FED2CA061E70637400C8078B /* BookListPresenter.swift in Sources */,
+				FED2CA0F1E7067C600C8078B /* SearchService.swift in Sources */,
+				FED2CA0C1E70640800C8078B /* BookTableViewCell.swift in Sources */,
+				FED2CA111E706C2400C8078B /* Book.swift in Sources */,
+				FED2CA051E70637400C8078B /* BookListModels.swift in Sources */,
 				FED2C9E41E7030FE00C8078B /* SignInInteractor.swift in Sources */,
 				FED2C9E61E7030FE00C8078B /* SignInPresenter.swift in Sources */,
 				FED2C9F61E70513600C8078B /* User.swift in Sources */,
 				FED2C9E91E7030FE00C8078B /* SignInWorker.swift in Sources */,
+				FED2CA031E70637400C8078B /* BookListConfigurator.swift in Sources */,
+				FED2CA081E70637400C8078B /* BookListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,6 +34,7 @@ class SignInViewController: UIViewController, SignInViewControllerInput
     {
         super.awakeFromNib()
         SignInConfigurator.sharedInstance.configure(viewController: self)
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     // MARK: - View lifecycle
@@ -41,7 +42,6 @@ class SignInViewController: UIViewController, SignInViewControllerInput
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
 
@@ -56,6 +56,7 @@ class SignInViewController: UIViewController, SignInViewControllerInput
     func displayUserInfo(viewModel: SignIn.Authenticate.ViewModel) {
         print(viewModel.name)
         print(viewModel.email)
+        router.navigateToTabBarScene()
     }
 }
 
