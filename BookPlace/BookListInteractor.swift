@@ -35,7 +35,10 @@ class BookListInteractor: BookListInteractorInput
     func getBookList(request: BookList.GetBookList.Request)
     {
         SearchService.sharedInstace.getBookListWithString(searchString: request.searchString) { (json, error) in
-            guard let result = json else { return }
+            guard let result = json else {
+                self.output.presentBookList(response: BookList.GetBookList.Response(books: nil))
+                return
+            }
             self.createBooksFromJson(json: result)
         }
     }
