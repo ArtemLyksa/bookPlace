@@ -34,7 +34,7 @@ class BookListInteractor: BookListInteractorInput
     // MARK: - Business logic
     func getBookList(request: BookList.GetBookList.Request)
     {
-        SearchService.sharedInstace.getBookListWithString(searchString: request.searchString) { (json, error) in
+        NetworkService.sharedInstace.getBookListWithString(searchString: request.searchString) { (json, error) in
             guard let result = json else {
                 self.output.presentBookList(response: BookList.GetBookList.Response(books: nil))
                 return

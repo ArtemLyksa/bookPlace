@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B2C5625A2FAF7E4DB594D6D /* Pods_BookPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67029EA865036AE29CDC8DA8 /* Pods_BookPlace.framework */; };
-		FE0819171E72E6B200369B47 /* BooksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0819161E72E6B200369B47 /* BooksRouter.swift */; };
+		FE0819171E72E6B200369B47 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0819161E72E6B200369B47 /* APIRouter.swift */; };
 		FE627B361E71B5AE008F85A8 /* BookDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B2F1E71B5AE008F85A8 /* BookDetailsConfigurator.swift */; };
 		FE627B371E71B5AE008F85A8 /* BookDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B301E71B5AE008F85A8 /* BookDetailsInteractor.swift */; };
 		FE627B381E71B5AE008F85A8 /* BookDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B311E71B5AE008F85A8 /* BookDetailsModels.swift */; };
@@ -51,7 +51,7 @@
 		FED2CA081E70637400C8078B /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA011E70637400C8078B /* BookListViewController.swift */; };
 		FED2CA091E70637400C8078B /* BookListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA021E70637400C8078B /* BookListWorker.swift */; };
 		FED2CA0C1E70640800C8078B /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA0B1E70640800C8078B /* BookTableViewCell.swift */; };
-		FED2CA0F1E7067C600C8078B /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA0E1E7067C600C8078B /* SearchService.swift */; };
+		FED2CA0F1E7067C600C8078B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA0E1E7067C600C8078B /* NetworkService.swift */; };
 		FED2CA111E706C2400C8078B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2CA101E706C2400C8078B /* Book.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,7 @@
 		2BC2029FDBF9BFD961683B8C /* Pods-BookPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookPlace.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookPlace/Pods-BookPlace.release.xcconfig"; sourceTree = "<group>"; };
 		67029EA865036AE29CDC8DA8 /* Pods_BookPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3224D648F5E1D2864D386DE /* Pods-BookPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookPlace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookPlace/Pods-BookPlace.debug.xcconfig"; sourceTree = "<group>"; };
-		FE0819161E72E6B200369B47 /* BooksRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksRouter.swift; sourceTree = "<group>"; };
+		FE0819161E72E6B200369B47 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		FE627B2F1E71B5AE008F85A8 /* BookDetailsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsConfigurator.swift; sourceTree = "<group>"; };
 		FE627B301E71B5AE008F85A8 /* BookDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsInteractor.swift; sourceTree = "<group>"; };
 		FE627B311E71B5AE008F85A8 /* BookDetailsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsModels.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		FED2CA011E70637400C8078B /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		FED2CA021E70637400C8078B /* BookListWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListWorker.swift; sourceTree = "<group>"; };
 		FED2CA0B1E70640800C8078B /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
-		FED2CA0E1E7067C600C8078B /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		FED2CA0E1E7067C600C8078B /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FED2CA101E706C2400C8078B /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,8 +282,8 @@
 		FED2CA0D1E70679D00C8078B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FED2CA0E1E7067C600C8078B /* SearchService.swift */,
-				FE0819161E72E6B200369B47 /* BooksRouter.swift */,
+				FED2CA0E1E7067C600C8078B /* NetworkService.swift */,
+				FE0819161E72E6B200369B47 /* APIRouter.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -413,7 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE0819171E72E6B200369B47 /* BooksRouter.swift in Sources */,
+				FE0819171E72E6B200369B47 /* APIRouter.swift in Sources */,
 				FED2CA091E70637400C8078B /* BookListWorker.swift in Sources */,
 				FED2C9E81E7030FE00C8078B /* SignInViewController.swift in Sources */,
 				FEA20A071E71F8BB0056DC51 /* AccountViewController.swift in Sources */,
@@ -432,7 +432,7 @@
 				FEA20A031E71F8BB0056DC51 /* AccountInteractor.swift in Sources */,
 				FEA20A051E71F8BB0056DC51 /* AccountPresenter.swift in Sources */,
 				FED2CA061E70637400C8078B /* BookListPresenter.swift in Sources */,
-				FED2CA0F1E7067C600C8078B /* SearchService.swift in Sources */,
+				FED2CA0F1E7067C600C8078B /* NetworkService.swift in Sources */,
 				FEA209F81E71E6010056DC51 /* BookBasketViewController.swift in Sources */,
 				FEA209F61E71E6010056DC51 /* BookBasketPresenter.swift in Sources */,
 				FE627B391E71B5AE008F85A8 /* BookDetailsPresenter.swift in Sources */,

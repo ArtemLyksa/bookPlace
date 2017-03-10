@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-enum BooksRouter: URLRequestConvertible {
+enum APIRouter: URLRequestConvertible {
     
     static let baseURLString = "https://www.googleapis.com/books/v1/volumes"
     case getBooks([String: Any])
@@ -38,7 +38,7 @@ enum BooksRouter: URLRequestConvertible {
             }
         }()
         let url: URL = {
-            let url = URL(string: BooksRouter.baseURLString)!
+            let url = URL(string: APIRouter.baseURLString)!
             return url
         }()
         

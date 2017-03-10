@@ -9,9 +9,9 @@
 import Foundation
 import Alamofire
 
-class SearchService {
+class NetworkService {
     
-    static let sharedInstace = SearchService()
+    static let sharedInstace = NetworkService()
     private init() {}
     
     func getBookListWithString(searchString: String, completionHandler: @escaping ([String: AnyObject]?, Error?) -> ()) -> () {
@@ -21,14 +21,15 @@ class SearchService {
             "projection" : "lite"
         ]
         
-        let dataRequest = Alamofire.request(BooksRouter.getBooks(params))
+        let dataRequest = Alamofire.request(APIRouter.getBooks(params))
         dataRequest.response { (response) in
             do {
                 if let dataResp = response.data,
                     let json = try JSONSerialization.jsonObject(with: dataResp, options: []) as? [String: AnyObject] {
                     completionHandler(json, nil)
+                } else {
+                    completionHandler(nil, response.error)
                 }
-                completionHandler(nil, response.error)
             } catch {
                 print("Error when trying convert data to json")
                 completionHandler(nil, response.error)
