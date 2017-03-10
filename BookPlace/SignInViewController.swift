@@ -48,20 +48,23 @@ class SignInViewController: UIViewController, SignInViewControllerInput
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewWillAppear(true)
         view.isUserInteractionEnabled = true
     }
     
 
-    @IBAction func loginWithFacebookButtonTapped(_ sender: UIButton) {
+    @IBAction func loginWithFacebookButtonTapped(_ sender: UIButton)
+    {
         view.isUserInteractionEnabled = false
         FBSDKAppEvents.activateApp()
         FBSDKApplicationDelegate.sharedInstance().application(UIApplication.shared, didFinishLaunchingWithOptions: nil)
         output.signInWithFacebook(request: SignIn.Authenticate.Request())
     }
     
-    @IBAction func loginWithGoogleButtonTapped(_ sender: UIButton) {
+    @IBAction func loginWithGoogleButtonTapped(_ sender: UIButton)
+    {
         view.isUserInteractionEnabled = false
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.signInWithFacebook = false
@@ -71,21 +74,26 @@ class SignInViewController: UIViewController, SignInViewControllerInput
         output.signInWithGoogle(request: SignIn.Authenticate.Request())
     }
     
-    func displayUserInfo(viewModel: SignIn.Authenticate.ViewModel) {
+    func displayUserInfo(viewModel: SignIn.Authenticate.ViewModel)
+    {
         output.getImageForUser(requset: SignIn.GetImage.Request(imageURL: viewModel.user.imageURL))
         router.navigateToTabBarScene()
     }
 }
 
 
-extension SignInViewController: GIDSignInUIDelegate {
-    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+extension SignInViewController: GIDSignInUIDelegate
+{
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!)
+    {
         self.present(viewController, animated: true, completion: nil)
     }
 }
 
-extension AppDelegate {
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+extension AppDelegate
+{
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool
+    {
         if signInWithFacebook == true {
             return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         } else {
