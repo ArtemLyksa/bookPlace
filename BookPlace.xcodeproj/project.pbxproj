@@ -135,6 +135,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FE0819151E72E2DB00369B47 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FED2C9DB1E7030D300C8078B /* SignInScene */,
+				FED2C9F81E705CAE00C8078B /* TabBarScenes */,
+				FE627B2E1E71B53D008F85A8 /* BookDetailScene */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		FE627B2E1E71B53D008F85A8 /* BookDetailScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,9 +210,7 @@
 			children = (
 				FED2CA0D1E70679D00C8078B /* Services */,
 				FED2C9F41E70512900C8078B /* Models */,
-				FED2C9DB1E7030D300C8078B /* SignInScene */,
-				FED2C9F81E705CAE00C8078B /* TabBarScenes */,
-				FE627B2E1E71B53D008F85A8 /* BookDetailScene */,
+				FE0819151E72E2DB00369B47 /* Scenes */,
 				FED2C9C91E702FDA00C8078B /* AppDelegate.swift */,
 				FED2C9CD1E702FDA00C8078B /* Main.storyboard */,
 				FED2C9D01E702FDA00C8078B /* Assets.xcassets */,

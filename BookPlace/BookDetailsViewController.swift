@@ -81,7 +81,7 @@ class BookDetailsViewController: UIViewController, BookDetailsViewControllerInpu
     
     func addBookToBasket(request: BookDetails.AddBookToBasket.ViewModel) {
         User.sharedInstance().books.append(curentBook)
-        output.createRightBarButton(request: BookDetails.CreateRightBarButton.Request(title: "Удалить"))
+        router.navigateToPreviousScene()
     }
     
     func removeBookFormBasket(request: BookDetails.RemoveBookFromBasket.ViewModel) {

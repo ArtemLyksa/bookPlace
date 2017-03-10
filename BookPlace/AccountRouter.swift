@@ -54,7 +54,7 @@ class AccountRouter: AccountRouterInput
     
     func navigateToSignIn()
     {
-        viewController.tabBarController!.navigationController?.popToRootViewController(animated: true)
+        let _ = viewController.tabBarController!.navigationController?.popToRootViewController(animated: true)
     }
     
     func passDataToSomewhereScene(segue: UIStoryboardSegue)

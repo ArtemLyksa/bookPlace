@@ -6,5 +6,6 @@ target 'BookPlace' do
 
 pod 'FBSDKLoginKit'
 pod 'Google/SignIn'
+pod 'Alamofire', '~> 4.0'
 
 end
