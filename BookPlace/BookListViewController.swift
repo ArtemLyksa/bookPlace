@@ -32,7 +32,7 @@ class BookListViewController: UIViewController, BookListViewControllerInput
     var router: BookListRouter!
     var dataSource: [Book] = []
     var heights = [IndexPath:CGFloat]()
-    var activityIndicator: UIActivityIndicatorView!
+    var activityIndicator: UIActivityIndicatorView?
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     // MARK: - Object lifecycle
@@ -55,24 +55,28 @@ class BookListViewController: UIViewController, BookListViewControllerInput
         tableView.estimatedRowHeight = 100.0
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewWillAppear(animated)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool)
+    {
         super.viewWillDisappear(animated)
         output.stopLoadingImage(request: BookList.StopLoadingImageProcess.Request())
     }
     
-    func displayBookList(viewModel: BookList.GetBookList.ViewModel) {
+    func displayBookList(viewModel: BookList.GetBookList.ViewModel)
+    {
         dataSource = viewModel.bookList
         DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
+            self.activityIndicator!.stopAnimating()
             self.tableView.reloadData()
         }
     }
     
-    func displayBookImage(viewModel: BookList.GetBookImage.ViewModel) {
+    func displayBookImage(viewModel: BookList.GetBookImage.ViewModel)
+    {
         guard let row = dataSource.index(of: viewModel.book) else { return }
         let indexPath = IndexPath(row: row, section: 0)
         DispatchQueue.main.async {
@@ -80,6 +84,20 @@ class BookListViewController: UIViewController, BookListViewControllerInput
                 self.tableView.reloadRows(at: [indexPath], with: .none)
             }
         }
+    }
+    func displayActivityIndicator()
+    {
+        guard let indicator = activityIndicator else {
+            activityIndicator = UIActivityIndicatorView.init(frame: view.frame)
+            activityIndicator!.activityIndicatorViewStyle = .whiteLarge
+            activityIndicator!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            activityIndicator!.center = view.center
+            activityIndicator!.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            UIApplication.shared.keyWindow?.addSubview(activityIndicator!)
+            activityIndicator!.startAnimating()
+            return
+        }
+        indicator.startAnimating()
     }
 }
 
@@ -130,13 +148,7 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource, UI
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
     {
         if let text = searchBar.text, text.characters.count > 0 {
-            activityIndicator = UIActivityIndicatorView.init(frame: view.frame)
-            activityIndicator.activityIndicatorViewStyle = .whiteLarge
-            activityIndicator.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            activityIndicator.center = view.center
-            activityIndicator.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-            UIApplication.shared.keyWindow?.addSubview(activityIndicator)
-            activityIndicator.startAnimating()
+            displayActivityIndicator()
             output.getBookList(request: BookList.GetBookList.Request(searchString: text))
         }
         searchBar.resignFirstResponder()
