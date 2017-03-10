@@ -7,13 +7,34 @@
 //
 
 import Foundation
+import UIKit
 
 class User {
     var name: String!
     var email: String!
     var books: [Book] = []
-    var accessToken: String?
+    var imageURL: URL?
+    var image: UIImage?
     
-    static let sharedInstance = User()
-    private init() {}
+    private static var privateShared : User?
+    
+    class func sharedInstance() -> User { // change class to final to prevent override
+        guard let uwShared = privateShared else {
+            privateShared = User()
+            return privateShared!
+        }
+        return uwShared
+    }
+    
+    class func destroy() {
+        privateShared = nil
+    }
+    
+    private init() {
+        print("init singleton")
+    }
+    
+    deinit {
+        print("deinit singleton")
+    }
 }

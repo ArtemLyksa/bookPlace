@@ -1,5 +1,5 @@
 //
-//  BookBacketModels.swift
+//  AccountWorker.swift
 //  BookPlace
 //
 //  Created by Artem Lyksa on 3/9/17.
@@ -11,18 +11,12 @@
 
 import UIKit
 
-struct BookBacket
+class AccountWorker
 {
-  struct Something
+  // MARK: - Business Logic
+  
+  func doSomeWork()
   {
-    struct Request
-    {
-    }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
+    // NOTE: Do the work
   }
 }

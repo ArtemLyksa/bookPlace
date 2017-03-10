@@ -1,5 +1,5 @@
 //
-//  BookBacketViewController.swift
+//  BookBasketViewController.swift
 //  BookPlace
 //
 //  Created by Artem Lyksa on 3/9/17.
@@ -11,20 +11,20 @@
 
 import UIKit
 
-protocol BookBacketViewControllerInput
+protocol BookBasketViewControllerInput
 {
 }
 
-protocol BookBacketViewControllerOutput
+protocol BookBasketViewControllerOutput
 {
-    func doSomething(request: BookBacket.Something.Request)
+    func doSomething(request: BookBasket.Something.Request)
 }
 
-class BookBacketViewController: UIViewController, BookBacketViewControllerInput
+class BookBasketViewController: UIViewController, BookBasketViewControllerInput
 {
     @IBOutlet weak var tableView: UITableView!
-    var output: BookBacketViewControllerOutput!
-    var router: BookBacketRouter!
+    var output: BookBasketViewControllerOutput!
+    var router: BookBasketRouter!
     var dataSource: [Book] = []
     var heights = [IndexPath:CGFloat]()
 
@@ -33,7 +33,7 @@ class BookBacketViewController: UIViewController, BookBacketViewControllerInput
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        BookBacketConfigurator.sharedInstance.configure(viewController: self)
+        BookBasketConfigurator.sharedInstance.configure(viewController: self)
     }
     
     // MARK: - View lifecycle
@@ -41,18 +41,19 @@ class BookBacketViewController: UIViewController, BookBacketViewControllerInput
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView.init()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        dataSource = User.sharedInstance.books
+        dataSource = User.sharedInstance().books
         tableView.reloadData()
     }
 }
 
-extension BookBacketViewController: UITableViewDelegate, UITableViewDataSource {
+extension BookBasketViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count

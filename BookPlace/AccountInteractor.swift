@@ -1,5 +1,5 @@
 //
-//  BookBacketInteractor.swift
+//  AccountInteractor.swift
 //  BookPlace
 //
 //  Created by Artem Lyksa on 3/9/17.
@@ -11,33 +11,33 @@
 
 import UIKit
 
-protocol BookBacketInteractorInput
+protocol AccountInteractorInput
 {
-  func doSomething(request: BookBacket.Something.Request)
+  func doSomething(request: Account.Something.Request)
 }
 
-protocol BookBacketInteractorOutput
+protocol AccountInteractorOutput
 {
-  func presentSomething(response: BookBacket.Something.Response)
+  func presentSomething(response: Account.Something.Response)
 }
 
-class BookBacketInteractor: BookBacketInteractorInput
+class AccountInteractor: AccountInteractorInput
 {
-  var output: BookBacketInteractorOutput!
-  var worker: BookBacketWorker!
+  var output: AccountInteractorOutput!
+  var worker: AccountWorker!
   
   // MARK: - Business logic
   
-  func doSomething(request: BookBacket.Something.Request)
+  func doSomething(request: Account.Something.Request)
   {
     // NOTE: Create some Worker to do the work
     
-    worker = BookBacketWorker()
+    worker = AccountWorker()
     worker.doSomeWork()
     
     // NOTE: Pass the result to the Presenter
     
-    let response = BookBacket.Something.Response()
+    let response = Account.Something.Response()
     output.presentSomething(response: response)
   }
 }

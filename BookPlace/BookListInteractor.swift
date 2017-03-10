@@ -14,12 +14,14 @@ import UIKit
 protocol BookListInteractorInput
 {
     func getBookList(request: BookList.GetBookList.Request)
+    func getImage(request: BookList.GetBookImage.Request)
     func stopLoadingImage(request: BookList.StopLoadingImageProcess.Request)
+    func removeBookList(request:BookList.RemoveBookList.Request)
 }
 
 protocol BookListInteractorOutput
 {
-    func presentBookList(response: [BookList.GetBookList.Response])
+    func presentBookList(response: BookList.GetBookList.Response)
     func presentBookImage(response:BookList.GetBookImage.Response)
 }
 
@@ -32,7 +34,7 @@ class BookListInteractor: BookListInteractorInput
     // MARK: - Business logic
     func getBookList(request: BookList.GetBookList.Request)
     {
-        SearchService.getBookListWithString(searchString: request.searchString) { (json, error) in
+        SearchService.sharedInstace.getBookListWithString(searchString: request.searchString) { (json, error) in
             guard let result = json else { return }
             self.createBooksFromJson(json: result)
         }
@@ -40,7 +42,7 @@ class BookListInteractor: BookListInteractorInput
     
     func createBooksFromJson(json: [String:AnyObject])
     {
-        var books:[BookList.GetBookList.Response] = []
+        var books:[BookList.GetBookList.Response.BookData] = []
         if let items = json["items"] as? [[String:AnyObject]] {
             for item in items {
                 guard let volumeInfo = item["volumeInfo"] as? [String : AnyObject] else { continue }
@@ -60,11 +62,11 @@ class BookListInteractor: BookListInteractorInput
                         imageURL = URL.init(string: previewLink)
                     }
                 }
-                let response = BookList.GetBookList.Response(bookName: title, authors: authors, description: description, imageURL: imageURL)
-                books.append(response)
+                let bookData = BookList.GetBookList.Response.BookData(bookName: title, authors: authors, description: description, imageURL: imageURL)
+                books.append(bookData)
             }
         }
-        output.presentBookList(response: books)
+        output.presentBookList(response: BookList.GetBookList.Response(books: books))
     }
 
 
@@ -85,5 +87,10 @@ class BookListInteractor: BookListInteractorInput
     
     func stopLoadingImage(request: BookList.StopLoadingImageProcess.Request) {
         queue.cancelAllOperations()
+    }
+    
+    func removeBookList(request: BookList.RemoveBookList.Request) {
+        queue.cancelAllOperations()
+        output.presentBookList(response: BookList.GetBookList.Response(books: nil))
     }
 }

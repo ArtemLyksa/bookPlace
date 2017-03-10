@@ -22,6 +22,7 @@ protocol BookListViewControllerOutput
     func getBookList(request: BookList.GetBookList.Request)
     func getImage(request: BookList.GetBookImage.Request)
     func stopLoadingImage(request: BookList.StopLoadingImageProcess.Request)
+    func removeBookList(request:BookList.RemoveBookList.Request)
 }
 
 class BookListViewController: UIViewController, BookListViewControllerInput
@@ -31,6 +32,7 @@ class BookListViewController: UIViewController, BookListViewControllerInput
     var router: BookListRouter!
     var dataSource: [Book] = []
     var heights = [IndexPath:CGFloat]()
+    var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     // MARK: - Object lifecycle
@@ -38,8 +40,8 @@ class BookListViewController: UIViewController, BookListViewControllerInput
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        BookListConfigurator.sharedInstance.configure(viewController: self)
         tabBarController?.navigationItem.hidesBackButton = true
+        BookListConfigurator.sharedInstance.configure(viewController: self)
     }
     
     // MARK: - View lifecycle
@@ -47,24 +49,25 @@ class BookListViewController: UIViewController, BookListViewControllerInput
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        tabBarController?.navigationController?.view.backgroundColor = UIColor.white
+        tableView.tableFooterView = UIView.init()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        searchBar.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        searchBar.isHidden = true
         output.stopLoadingImage(request: BookList.StopLoadingImageProcess.Request())
     }
     
     func displayBookList(viewModel: BookList.GetBookList.ViewModel) {
         dataSource = viewModel.bookList
         DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
             self.tableView.reloadData()
         }
     }
@@ -80,12 +83,15 @@ class BookListViewController: UIViewController, BookListViewControllerInput
     }
 }
 
-extension BookListViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension BookListViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return dataSource.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let bookCell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) as! BookTableViewCell
         let book = dataSource[indexPath.row]
         bookCell.bookNameLabel.text = book.name
@@ -98,13 +104,15 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource, UI
         return bookCell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
         if (cell.frame.size.height > 0) {
             heights[indexPath] = cell.frame.size.height
         }
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
+    {
         if let height = heights[indexPath], height > 10.0 {
             return height
         } else {
@@ -112,16 +120,32 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource, UI
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         tableView.deselectRow(at: indexPath, animated: true)
         router.navigateToBookDetailsScene(fromIndexPath: indexPath)
     }
     
 
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
         if let text = searchBar.text, text.characters.count > 0 {
+            activityIndicator = UIActivityIndicatorView.init(frame: view.frame)
+            activityIndicator.activityIndicatorViewStyle = .whiteLarge
+            activityIndicator.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            activityIndicator.center = view.center
+            activityIndicator.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            UIApplication.shared.keyWindow?.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
             output.getBookList(request: BookList.GetBookList.Request(searchString: text))
         }
         searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        if searchText.characters.count == 0 {
+            output.removeBookList(request: BookList.RemoveBookList.Request())
+        }
     }
 }

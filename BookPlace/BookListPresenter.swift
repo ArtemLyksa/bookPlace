@@ -13,7 +13,7 @@ import UIKit
 
 protocol BookListPresenterInput
 {
-    func presentBookList(response: [BookList.GetBookList.Response])
+    func presentBookList(response: BookList.GetBookList.Response)
     func presentBookImage(response:BookList.GetBookImage.Response)
 }
 
@@ -28,19 +28,23 @@ class BookListPresenter: BookListPresenterInput
     weak var output: BookListPresenterOutput!
     
     // MARK: - Presentation logic
-    func presentBookList(response: [BookList.GetBookList.Response]) {
-        var books: [Book] = []
-        for respStruct in response {
-            var authorString = String()
-            for author in respStruct.authors {
-                authorString = authorString.appendingFormat("%@\n", author)
+    func presentBookList(response: BookList.GetBookList.Response) {
+        var bookList: [Book] = []
+        
+        if let respBooks = response.books {
+            for respStruct in respBooks {
+                var authorString = String()
+                for author in respStruct.authors {
+                    authorString = authorString.appendingFormat("%@\n", author)
+                }
+                let book = Book(name: respStruct.bookName, authors: authorString, bookDescription: respStruct.description)
+                bookList.append(book)
+                guard let imageURL = respStruct.imageURL else { continue }
+                book.imageURL = imageURL
             }
-            let book = Book(name: respStruct.bookName, authors: authorString, bookDescription: respStruct.description)
-            books.append(book)
-            guard let imageURL = respStruct.imageURL else { continue }
-            book.imageURL = imageURL
         }
-        output.displayBookList(viewModel: BookList.GetBookList.ViewModel(bookList: books))
+
+        output.displayBookList(viewModel: BookList.GetBookList.ViewModel(bookList: bookList))
     }
     
     func presentBookImage(response:BookList.GetBookImage.Response) {

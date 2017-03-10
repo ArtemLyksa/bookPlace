@@ -1,5 +1,5 @@
 //
-//  BookBacketConfigurator.swift
+//  BookBasketConfigurator.swift
 //  BookPlace
 //
 //  Created by Artem Lyksa on 3/9/17.
@@ -13,7 +13,7 @@ import UIKit
 
 // MARK: - Connect View, Interactor, and Presenter
 
-extension BookBacketViewController: BookBacketPresenterOutput
+extension BookBasketViewController: BookBasketPresenterOutput
 {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
@@ -21,33 +21,33 @@ extension BookBacketViewController: BookBacketPresenterOutput
   }
 }
 
-extension BookBacketInteractor: BookBacketViewControllerOutput
+extension BookBasketInteractor: BookBasketViewControllerOutput
 {
 }
 
-extension BookBacketPresenter: BookBacketInteractorOutput
+extension BookBasketPresenter: BookBasketInteractorOutput
 {
 }
 
-class BookBacketConfigurator
+class BookBasketConfigurator
 {
   // MARK: - Object lifecycle
   
-  static let sharedInstance = BookBacketConfigurator()
+  static let sharedInstance = BookBasketConfigurator()
   
   private init() {}
   
   // MARK: - Configuration
   
-  func configure(viewController: BookBacketViewController)
+  func configure(viewController: BookBasketViewController)
   {
-    let router = BookBacketRouter()
+    let router = BookBasketRouter()
     router.viewController = viewController
     
-    let presenter = BookBacketPresenter()
+    let presenter = BookBasketPresenter()
     presenter.output = viewController
     
-    let interactor = BookBacketInteractor()
+    let interactor = BookBasketInteractor()
     interactor.output = presenter
     
     viewController.output = interactor

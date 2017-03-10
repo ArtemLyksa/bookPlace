@@ -1,5 +1,5 @@
 //
-//  BookBacketRouter.swift
+//  BookBasketRouter.swift
 //  BookPlace
 //
 //  Created by Artem Lyksa on 3/9/17.
@@ -11,14 +11,14 @@
 
 import UIKit
 
-protocol BookBacketRouterInput
+protocol BookBasketRouterInput
 {
   func navigateToSomewhere()
 }
 
-class BookBacketRouter: BookBacketRouterInput
+class BookBasketRouter: BookBasketRouterInput
 {
-  weak var viewController: BookBacketViewController!
+  weak var viewController: BookBasketViewController!
   
   // MARK: - Navigation
   

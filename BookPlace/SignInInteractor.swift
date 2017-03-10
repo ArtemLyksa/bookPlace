@@ -11,11 +11,13 @@
 
 import UIKit
 import GoogleSignIn
+import FBSDKLoginKit
 
 protocol SignInInteractorInput
 {
     func signInWithFacebook(request: SignIn.Authenticate.Request)
     func signInWithGoogle(request: SignIn.Authenticate.Request)
+    func getImageForUser(requset: SignIn.GetImage.Request)
 }
 
 protocol SignInInteractorOutput
@@ -29,34 +31,81 @@ class SignInInteractor: NSObject, SignInInteractorInput
     var worker: SignInWorker!
     
     // MARK: - Business logic
-    func signInWithFacebook(request: SignIn.Authenticate.Request) {
-        worker = SignInWorker()
-        worker.signInWithFacebook { (name, email) in
-            let response = SignIn.Authenticate.Response(email: name, name: email)
-            self.output.presentUserInfo(response: response)
+    func signInWithFacebook(request: SignIn.Authenticate.Request)
+    {
+        if (FBSDKAccessToken.current()) != nil {
+            loginWithFB()
+        } else {
+            let loginManager = FBSDKLoginManager()
+            loginManager.logIn(withReadPermissions: ["public_profile", "email"], from: nil) { (result, error) in
+                self.loginWithFB()
+            }
         }
+
+    }
+    
+    private func loginWithFB()
+    {
+        FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name,picture.width(200).height(200)"]).start(completionHandler: { (connection, responseObject, error) in
+            if error == nil {
+                let castedObject = responseObject as! [String : AnyObject]
+                self.processFacebookResponse(response: castedObject)
+            }
+        })
+    }
+    
+    private func processFacebookResponse(response:[String : AnyObject])
+    {
+        guard let name = response["name"] as? String,
+            let email = response["email"] as? String else { return }
+        guard let picture = response["picture"] as? [String : AnyObject],
+            let data = picture["data"] as? [String : AnyObject],
+            let urlString = data["url"] as? String,
+            let imageURL = URL.init(string: urlString) else {
+                let outpResponse = SignIn.Authenticate.Response(email: email, name: name, imageURL: nil)
+                self.output.presentUserInfo(response: outpResponse)
+                return
+        }
+        let outpResponse = SignIn.Authenticate.Response(email: email, name: name, imageURL: imageURL)
+        self.output.presentUserInfo(response: outpResponse)
     }
     
     func signInWithGoogle(request: SignIn.Authenticate.Request) {
         GIDSignIn.sharedInstance().delegate = self
-        worker = SignInWorker()
-        worker.signInWithGoogle()
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func getImageForUser(requset: SignIn.GetImage.Request) {
+        let blockOperation = BlockOperation.init {
+            do {
+                guard let imageURL = requset.imageURL else { return }
+                    let imageData = try Data.init(contentsOf: imageURL)
+                guard let image = UIImage.init(data: imageData) else { return }
+                User.sharedInstance().image = image
+            } catch {
+                print("Error while trying to download user image")
+            }
+        }
+        blockOperation.start()
     }
 }
 
-extension SignInInteractor: GIDSignInDelegate {
+extension SignInInteractor: GIDSignInDelegate
+{
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!)
+    {
         if error == nil {
-            let response = SignIn.Authenticate.Response(email: signIn.currentUser.profile.name, name: signIn.currentUser.profile.email)
+            let url = signIn.currentUser.profile.imageURL(withDimension: 200)
+            let response = SignIn.Authenticate.Response(email: signIn.currentUser.profile.email, name: signIn.currentUser.profile.name, imageURL: url)
             self.output.presentUserInfo(response: response)
         } else {
          print(error)
         }
-
     }
     
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!)
+    {
         print(error)
     }
 }

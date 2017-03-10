@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -111,7 +112,7 @@
                                         <rect key="frame" x="0.0" y="1" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8NP-ka-2J6" id="0eM-iA-EKL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="88K-8c-jEu">
@@ -273,10 +274,10 @@
             </objects>
             <point key="canvasLocation" x="1775.2" y="-8.5457271364317844"/>
         </scene>
-        <!--Book Backet View Controller-->
+        <!--Book Basket View Controller-->
         <scene sceneID="od2-tV-lAa">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="tTf-n4-sjg" customClass="BookBacketViewController" customModule="BookPlace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="tTf-n4-sjg" customClass="BookBasketViewController" customModule="BookPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tNa-cY-Jzm"/>
                         <viewControllerLayoutGuide type="bottom" id="vmq-Qh-y4v"/>
@@ -288,13 +289,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ck3-fU-CKS">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <inset key="separatorInset" minX="48" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookCell" id="HQx-vT-OvH" customClass="BookTableViewCell" customModule="BookPlace" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HQx-vT-OvH" id="lbm-X0-t9p">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zK1-bo-mBP">
@@ -327,6 +329,7 @@
                                                 <constraint firstItem="Gmc-7e-V9D" firstAttribute="top" secondItem="lbm-X0-t9p" secondAttribute="top" id="zoO-5r-1HS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="zK1-bo-mBP" firstAttribute="centerY" secondItem="HQx-vT-OvH" secondAttribute="centerY" id="66S-9Z-8Pm"/>
                                             <constraint firstItem="zK1-bo-mBP" firstAttribute="leading" secondItem="HQx-vT-OvH" secondAttribute="leading" constant="8" id="TTB-ft-2Gs"/>
@@ -345,6 +348,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Ck3-fU-CKS" secondAttribute="trailing" id="Uc1-J1-dZr"/>
                             <constraint firstItem="vmq-Qh-y4v" firstAttribute="top" secondItem="Ck3-fU-CKS" secondAttribute="bottom" id="fwM-JJ-9QC"/>
@@ -361,10 +365,10 @@
             </objects>
             <point key="canvasLocation" x="1775" y="1724"/>
         </scene>
-        <!--View Controller-->
+        <!--Account View Controller-->
         <scene sceneID="YBF-zC-JLU">
             <objects>
-                <viewController id="ip1-PY-nmt" sceneMemberID="viewController">
+                <viewController id="ip1-PY-nmt" customClass="AccountViewController" customModule="BookPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v2F-LR-vtt"/>
                         <viewControllerLayoutGuide type="bottom" id="UMA-56-v9z"/>
@@ -372,13 +376,61 @@
                     <view key="view" contentMode="scaleToFill" id="pqF-oT-44O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o8M-bU-AUs">
+                                <rect key="frame" x="87" y="100" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="o8M-bU-AUs" secondAttribute="height" multiplier="1:1" id="WLB-FT-7dF"/>
+                                    <constraint firstAttribute="width" constant="200" id="iIW-0e-1hz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lra-TX-kQg">
+                                <rect key="frame" x="165" y="325" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rW6-jU-NMR">
+                                <rect key="frame" x="88" y="558" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.36919105136042246" green="0.43645961786583892" blue="0.53679028999649803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="NJN-g2-be5"/>
+                                    <constraint firstAttribute="height" constant="40" id="ekm-MF-f2z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButtonTapped:" destination="ip1-PY-nmt" eventType="touchUpInside" id="Z7c-UG-Jqe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o8M-bU-AUs" firstAttribute="centerY" secondItem="pqF-oT-44O" secondAttribute="centerY" multiplier="0.6" id="D19-Jm-6eP"/>
+                            <constraint firstItem="lra-TX-kQg" firstAttribute="top" secondItem="o8M-bU-AUs" secondAttribute="bottom" constant="25" id="Dfv-J0-Owp"/>
+                            <constraint firstItem="UMA-56-v9z" firstAttribute="top" secondItem="rW6-jU-NMR" secondAttribute="bottom" constant="20" id="RPL-uF-Ivy"/>
+                            <constraint firstItem="lra-TX-kQg" firstAttribute="centerX" secondItem="o8M-bU-AUs" secondAttribute="centerX" id="Tbn-JB-DMq"/>
+                            <constraint firstItem="o8M-bU-AUs" firstAttribute="centerX" secondItem="pqF-oT-44O" secondAttribute="centerX" id="Tv6-re-Xxf"/>
+                            <constraint firstItem="rW6-jU-NMR" firstAttribute="centerX" secondItem="pqF-oT-44O" secondAttribute="centerX" id="edv-BO-g1M"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hGi-XK-Uae"/>
+                    <connections>
+                        <outlet property="userFullNameLabel" destination="lra-TX-kQg" id="opb-9M-p93"/>
+                        <outlet property="userImageView" destination="o8M-bU-AUs" id="fi4-vr-iTr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dmt-GG-IkI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2772" y="1746"/>
+            <point key="canvasLocation" x="2772" y="1745.577211394303"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uRC-Yz-whl">

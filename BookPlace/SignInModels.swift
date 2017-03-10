@@ -21,11 +21,26 @@ struct SignIn
         {
             var email: String!
             var name:  String!
+            var imageURL: URL?
             
         }
         struct ViewModel
         {
             var user: User
+        }
+    }
+    
+    struct GetImage {
+        struct Request
+        {
+            var imageURL: URL?
+        }
+        struct Response
+        {
+        }
+        struct ViewModel
+        {
+
         }
     }
 }

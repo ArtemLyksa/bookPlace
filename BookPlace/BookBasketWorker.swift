@@ -1,5 +1,5 @@
 //
-//  BookBacketWorker.swift
+//  BookBasketWorker.swift
 //  BookPlace
 //
 //  Created by Artem Lyksa on 3/9/17.
@@ -11,7 +11,7 @@
 
 import UIKit
 
-class BookBacketWorker
+class BookBasketWorker
 {
   // MARK: - Business Logic
   

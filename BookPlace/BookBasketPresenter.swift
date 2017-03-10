@@ -1,5 +1,5 @@
 //
-//  BookBacketPresenter.swift
+//  BookBasketPresenter.swift
 //  BookPlace
 //
 //  Created by Artem Lyksa on 3/9/17.
@@ -11,22 +11,22 @@
 
 import UIKit
 
-protocol BookBacketPresenterInput
+protocol BookBasketPresenterInput
 {
-  func presentSomething(response: BookBacket.Something.Response)
+  func presentSomething(response: BookBasket.Something.Response)
 }
 
-protocol BookBacketPresenterOutput: class
+protocol BookBasketPresenterOutput: class
 {
 }
 
-class BookBacketPresenter: BookBacketPresenterInput
+class BookBasketPresenter: BookBasketPresenterInput
 {
-  weak var output: BookBacketPresenterOutput!
+  weak var output: BookBasketPresenterOutput!
   
   // MARK: - Presentation logic
   
-  func presentSomething(response: BookBacket.Something.Response)
+  func presentSomething(response: BookBasket.Something.Response)
   {
     // NOTE: Format the response from the Interactor and pass the result back to the View Controller
   }

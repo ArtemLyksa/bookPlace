@@ -15,13 +15,20 @@
 		FE627B3A1E71B5AE008F85A8 /* BookDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B331E71B5AE008F85A8 /* BookDetailsRouter.swift */; };
 		FE627B3B1E71B5AE008F85A8 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B341E71B5AE008F85A8 /* BookDetailsViewController.swift */; };
 		FE627B3C1E71B5AE008F85A8 /* BookDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE627B351E71B5AE008F85A8 /* BookDetailsWorker.swift */; };
-		FEA209F31E71E6010056DC51 /* BookBacketConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209EC1E71E6010056DC51 /* BookBacketConfigurator.swift */; };
-		FEA209F41E71E6010056DC51 /* BookBacketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209ED1E71E6010056DC51 /* BookBacketInteractor.swift */; };
-		FEA209F51E71E6010056DC51 /* BookBacketModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209EE1E71E6010056DC51 /* BookBacketModels.swift */; };
-		FEA209F61E71E6010056DC51 /* BookBacketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209EF1E71E6010056DC51 /* BookBacketPresenter.swift */; };
-		FEA209F71E71E6010056DC51 /* BookBacketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209F01E71E6010056DC51 /* BookBacketRouter.swift */; };
-		FEA209F81E71E6010056DC51 /* BookBacketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209F11E71E6010056DC51 /* BookBacketViewController.swift */; };
-		FEA209F91E71E6010056DC51 /* BookBacketWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209F21E71E6010056DC51 /* BookBacketWorker.swift */; };
+		FEA209F31E71E6010056DC51 /* BookBasketConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209EC1E71E6010056DC51 /* BookBasketConfigurator.swift */; };
+		FEA209F41E71E6010056DC51 /* BookBasketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209ED1E71E6010056DC51 /* BookBasketInteractor.swift */; };
+		FEA209F51E71E6010056DC51 /* BookBasketModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209EE1E71E6010056DC51 /* BookBasketModels.swift */; };
+		FEA209F61E71E6010056DC51 /* BookBasketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209EF1E71E6010056DC51 /* BookBasketPresenter.swift */; };
+		FEA209F71E71E6010056DC51 /* BookBasketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209F01E71E6010056DC51 /* BookBasketRouter.swift */; };
+		FEA209F81E71E6010056DC51 /* BookBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209F11E71E6010056DC51 /* BookBasketViewController.swift */; };
+		FEA209F91E71E6010056DC51 /* BookBasketWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209F21E71E6010056DC51 /* BookBasketWorker.swift */; };
+		FEA20A021E71F8BB0056DC51 /* AccountConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209FB1E71F8BB0056DC51 /* AccountConfigurator.swift */; };
+		FEA20A031E71F8BB0056DC51 /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209FC1E71F8BB0056DC51 /* AccountInteractor.swift */; };
+		FEA20A041E71F8BB0056DC51 /* AccountModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209FD1E71F8BB0056DC51 /* AccountModels.swift */; };
+		FEA20A051E71F8BB0056DC51 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209FE1E71F8BB0056DC51 /* AccountPresenter.swift */; };
+		FEA20A061E71F8BB0056DC51 /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA209FF1E71F8BB0056DC51 /* AccountRouter.swift */; };
+		FEA20A071E71F8BB0056DC51 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA20A001E71F8BB0056DC51 /* AccountViewController.swift */; };
+		FEA20A081E71F8BB0056DC51 /* AccountWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA20A011E71F8BB0056DC51 /* AccountWorker.swift */; };
 		FED2C9CA1E702FDA00C8078B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2C9C91E702FDA00C8078B /* AppDelegate.swift */; };
 		FED2C9CF1E702FDA00C8078B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED2C9CD1E702FDA00C8078B /* Main.storyboard */; };
 		FED2C9D11E702FDA00C8078B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FED2C9D01E702FDA00C8078B /* Assets.xcassets */; };
@@ -58,13 +65,20 @@
 		FE627B331E71B5AE008F85A8 /* BookDetailsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsRouter.swift; sourceTree = "<group>"; };
 		FE627B341E71B5AE008F85A8 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
 		FE627B351E71B5AE008F85A8 /* BookDetailsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsWorker.swift; sourceTree = "<group>"; };
-		FEA209EC1E71E6010056DC51 /* BookBacketConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketConfigurator.swift; sourceTree = "<group>"; };
-		FEA209ED1E71E6010056DC51 /* BookBacketInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketInteractor.swift; sourceTree = "<group>"; };
-		FEA209EE1E71E6010056DC51 /* BookBacketModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketModels.swift; sourceTree = "<group>"; };
-		FEA209EF1E71E6010056DC51 /* BookBacketPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketPresenter.swift; sourceTree = "<group>"; };
-		FEA209F01E71E6010056DC51 /* BookBacketRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketRouter.swift; sourceTree = "<group>"; };
-		FEA209F11E71E6010056DC51 /* BookBacketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketViewController.swift; sourceTree = "<group>"; };
-		FEA209F21E71E6010056DC51 /* BookBacketWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBacketWorker.swift; sourceTree = "<group>"; };
+		FEA209EC1E71E6010056DC51 /* BookBasketConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBasketConfigurator.swift; sourceTree = "<group>"; };
+		FEA209ED1E71E6010056DC51 /* BookBasketInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBasketInteractor.swift; sourceTree = "<group>"; };
+		FEA209EE1E71E6010056DC51 /* BookBasketModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBasketModels.swift; sourceTree = "<group>"; };
+		FEA209EF1E71E6010056DC51 /* BookBasketPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBasketPresenter.swift; sourceTree = "<group>"; };
+		FEA209F01E71E6010056DC51 /* BookBasketRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBasketRouter.swift; sourceTree = "<group>"; };
+		FEA209F11E71E6010056DC51 /* BookBasketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBasketViewController.swift; sourceTree = "<group>"; };
+		FEA209F21E71E6010056DC51 /* BookBasketWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookBasketWorker.swift; sourceTree = "<group>"; };
+		FEA209FB1E71F8BB0056DC51 /* AccountConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountConfigurator.swift; sourceTree = "<group>"; };
+		FEA209FC1E71F8BB0056DC51 /* AccountInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
+		FEA209FD1E71F8BB0056DC51 /* AccountModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountModels.swift; sourceTree = "<group>"; };
+		FEA209FE1E71F8BB0056DC51 /* AccountPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
+		FEA209FF1E71F8BB0056DC51 /* AccountRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
+		FEA20A001E71F8BB0056DC51 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		FEA20A011E71F8BB0056DC51 /* AccountWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountWorker.swift; sourceTree = "<group>"; };
 		FED2C9C61E702FDA00C8078B /* BookPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED2C9C91E702FDA00C8078B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FED2C9CE1E702FDA00C8078B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,15 +152,29 @@
 		FEA209EB1E71E5DE0056DC51 /* BookBacketScene */ = {
 			isa = PBXGroup;
 			children = (
-				FEA209EC1E71E6010056DC51 /* BookBacketConfigurator.swift */,
-				FEA209ED1E71E6010056DC51 /* BookBacketInteractor.swift */,
-				FEA209EE1E71E6010056DC51 /* BookBacketModels.swift */,
-				FEA209EF1E71E6010056DC51 /* BookBacketPresenter.swift */,
-				FEA209F01E71E6010056DC51 /* BookBacketRouter.swift */,
-				FEA209F11E71E6010056DC51 /* BookBacketViewController.swift */,
-				FEA209F21E71E6010056DC51 /* BookBacketWorker.swift */,
+				FEA209EC1E71E6010056DC51 /* BookBasketConfigurator.swift */,
+				FEA209ED1E71E6010056DC51 /* BookBasketInteractor.swift */,
+				FEA209EE1E71E6010056DC51 /* BookBasketModels.swift */,
+				FEA209EF1E71E6010056DC51 /* BookBasketPresenter.swift */,
+				FEA209F01E71E6010056DC51 /* BookBasketRouter.swift */,
+				FEA209F11E71E6010056DC51 /* BookBasketViewController.swift */,
+				FEA209F21E71E6010056DC51 /* BookBasketWorker.swift */,
 			);
 			name = BookBacketScene;
+			sourceTree = "<group>";
+		};
+		FEA209FA1E71F8A20056DC51 /* AccountScene */ = {
+			isa = PBXGroup;
+			children = (
+				FEA209FB1E71F8BB0056DC51 /* AccountConfigurator.swift */,
+				FEA209FC1E71F8BB0056DC51 /* AccountInteractor.swift */,
+				FEA209FD1E71F8BB0056DC51 /* AccountModels.swift */,
+				FEA209FE1E71F8BB0056DC51 /* AccountPresenter.swift */,
+				FEA209FF1E71F8BB0056DC51 /* AccountRouter.swift */,
+				FEA20A001E71F8BB0056DC51 /* AccountViewController.swift */,
+				FEA20A011E71F8BB0056DC51 /* AccountWorker.swift */,
+			);
+			name = AccountScene;
 			sourceTree = "<group>";
 		};
 		FED2C9BD1E702FDA00C8078B = {
@@ -211,6 +239,7 @@
 		FED2C9F81E705CAE00C8078B /* TabBarScenes */ = {
 			isa = PBXGroup;
 			children = (
+				FEA209FA1E71F8A20056DC51 /* AccountScene */,
 				FEA209EB1E71E5DE0056DC51 /* BookBacketScene */,
 				FED2C9F91E705CBD00C8078B /* BookListScene */,
 			);
@@ -375,36 +404,43 @@
 			files = (
 				FED2CA091E70637400C8078B /* BookListWorker.swift in Sources */,
 				FED2C9E81E7030FE00C8078B /* SignInViewController.swift in Sources */,
+				FEA20A071E71F8BB0056DC51 /* AccountViewController.swift in Sources */,
 				FED2CA041E70637400C8078B /* BookListInteractor.swift in Sources */,
 				FE627B371E71B5AE008F85A8 /* BookDetailsInteractor.swift in Sources */,
+				FEA20A081E71F8BB0056DC51 /* AccountWorker.swift in Sources */,
 				FED2C9E71E7030FE00C8078B /* SignInRouter.swift in Sources */,
 				FED2C9E31E7030FE00C8078B /* SignInConfigurator.swift in Sources */,
-				FEA209F51E71E6010056DC51 /* BookBacketModels.swift in Sources */,
-				FEA209F91E71E6010056DC51 /* BookBacketWorker.swift in Sources */,
+				FEA209F51E71E6010056DC51 /* BookBasketModels.swift in Sources */,
+				FEA209F91E71E6010056DC51 /* BookBasketWorker.swift in Sources */,
 				FED2C9E51E7030FE00C8078B /* SignInModels.swift in Sources */,
 				FE627B3C1E71B5AE008F85A8 /* BookDetailsWorker.swift in Sources */,
+				FEA20A021E71F8BB0056DC51 /* AccountConfigurator.swift in Sources */,
 				FED2CA071E70637400C8078B /* BookListRouter.swift in Sources */,
 				FED2C9CA1E702FDA00C8078B /* AppDelegate.swift in Sources */,
+				FEA20A031E71F8BB0056DC51 /* AccountInteractor.swift in Sources */,
+				FEA20A051E71F8BB0056DC51 /* AccountPresenter.swift in Sources */,
 				FED2CA061E70637400C8078B /* BookListPresenter.swift in Sources */,
 				FED2CA0F1E7067C600C8078B /* SearchService.swift in Sources */,
-				FEA209F81E71E6010056DC51 /* BookBacketViewController.swift in Sources */,
-				FEA209F61E71E6010056DC51 /* BookBacketPresenter.swift in Sources */,
+				FEA209F81E71E6010056DC51 /* BookBasketViewController.swift in Sources */,
+				FEA209F61E71E6010056DC51 /* BookBasketPresenter.swift in Sources */,
 				FE627B391E71B5AE008F85A8 /* BookDetailsPresenter.swift in Sources */,
-				FEA209F41E71E6010056DC51 /* BookBacketInteractor.swift in Sources */,
+				FEA209F41E71E6010056DC51 /* BookBasketInteractor.swift in Sources */,
 				FE627B3B1E71B5AE008F85A8 /* BookDetailsViewController.swift in Sources */,
 				FE627B3A1E71B5AE008F85A8 /* BookDetailsRouter.swift in Sources */,
 				FED2CA0C1E70640800C8078B /* BookTableViewCell.swift in Sources */,
-				FEA209F31E71E6010056DC51 /* BookBacketConfigurator.swift in Sources */,
+				FEA20A041E71F8BB0056DC51 /* AccountModels.swift in Sources */,
+				FEA209F31E71E6010056DC51 /* BookBasketConfigurator.swift in Sources */,
 				FED2CA111E706C2400C8078B /* Book.swift in Sources */,
 				FE627B361E71B5AE008F85A8 /* BookDetailsConfigurator.swift in Sources */,
 				FED2CA051E70637400C8078B /* BookListModels.swift in Sources */,
 				FE627B381E71B5AE008F85A8 /* BookDetailsModels.swift in Sources */,
 				FED2C9E41E7030FE00C8078B /* SignInInteractor.swift in Sources */,
 				FED2C9E61E7030FE00C8078B /* SignInPresenter.swift in Sources */,
+				FEA20A061E71F8BB0056DC51 /* AccountRouter.swift in Sources */,
 				FED2C9F61E70513600C8078B /* User.swift in Sources */,
 				FED2C9E91E7030FE00C8078B /* SignInWorker.swift in Sources */,
 				FED2CA031E70637400C8078B /* BookListConfigurator.swift in Sources */,
-				FEA209F71E71E6010056DC51 /* BookBacketRouter.swift in Sources */,
+				FEA209F71E71E6010056DC51 /* BookBasketRouter.swift in Sources */,
 				FED2CA081E70637400C8078B /* BookListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,7 @@ protocol SignInViewControllerOutput
 {
     func signInWithFacebook(request: SignIn.Authenticate.Request)
     func signInWithGoogle(request: SignIn.Authenticate.Request)
+    func getImageForUser(requset: SignIn.GetImage.Request)
 }
 
 class SignInViewController: UIViewController, SignInViewControllerInput
@@ -54,6 +55,7 @@ class SignInViewController: UIViewController, SignInViewControllerInput
     }
     
     func displayUserInfo(viewModel: SignIn.Authenticate.ViewModel) {
+        output.getImageForUser(requset: SignIn.GetImage.Request(imageURL: viewModel.user.imageURL))
         router.navigateToTabBarScene()
     }
 }

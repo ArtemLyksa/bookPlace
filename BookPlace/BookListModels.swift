@@ -21,10 +21,13 @@ struct BookList
         }
         struct Response
         {
-            var bookName: String!
-            var authors: [String]!
-            var description: String!
-            var imageURL: URL?
+            struct BookData {
+                var bookName: String!
+                var authors: [String]!
+                var description: String!
+                var imageURL: URL?
+            }
+            var books: [BookData]?
         }
         struct ViewModel
         {
@@ -50,6 +53,19 @@ struct BookList
     }
     
     struct StopLoadingImageProcess
+    {
+        struct Request
+        {
+        }
+        struct Response
+        {
+        }
+        struct ViewModel
+        {
+        }
+    }
+    
+    struct RemoveBookList
     {
         struct Request
         {

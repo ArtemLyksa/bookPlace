@@ -55,8 +55,7 @@ class BookDetailsViewController: UIViewController, BookDetailsViewControllerInpu
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        bookDescriptionTextView.contentOffset = CGPoint.zero
-        bookDescriptionTextView.isHidden = false
+        bookDescriptionTextView.isScrollEnabled = true
     }
     
     func setUpUIElements()
@@ -64,9 +63,9 @@ class BookDetailsViewController: UIViewController, BookDetailsViewControllerInpu
         bookImageView.image = curentBook.image
         bookNameLabel.text = curentBook.name
         bookAuthorsLabel.text = curentBook.authors
-        bookDescriptionTextView.isHidden = true
+        bookDescriptionTextView.isScrollEnabled = false
         bookDescriptionTextView.text = curentBook.bookDescription
-        if (User.sharedInstance.books.contains(curentBook)) {
+        if (User.sharedInstance().books.contains(curentBook)) {
             output.createRightBarButton(request: BookDetails.CreateRightBarButton.Request(title: "Удалить"))
         } else {
             output.createRightBarButton(request: BookDetails.CreateRightBarButton.Request(title: "В корзину"))
@@ -76,23 +75,23 @@ class BookDetailsViewController: UIViewController, BookDetailsViewControllerInpu
     func displayRightBarButton(viewModel: BookDetails.CreateRightBarButton.ViewModel) {
         let rightBarButtonItem = viewModel.rightBarButtonItem
         rightBarButtonItem!.target = self
-        rightBarButtonItem!.action = #selector(addToBacketButtonTapped)
+        rightBarButtonItem!.action = #selector(addToBasketButtonTapped)
         navItem.rightBarButtonItem = rightBarButtonItem
     }
     
     func addBookToBasket(request: BookDetails.AddBookToBasket.ViewModel) {
-        User.sharedInstance.books.append(curentBook)
+        User.sharedInstance().books.append(curentBook)
         output.createRightBarButton(request: BookDetails.CreateRightBarButton.Request(title: "Удалить"))
     }
     
     func removeBookFormBasket(request: BookDetails.RemoveBookFromBasket.ViewModel) {
-        guard let index = User.sharedInstance.books.index(of: curentBook) else { return }
-        User.sharedInstance.books.remove(at: index)
+        guard let index = User.sharedInstance().books.index(of: curentBook) else { return }
+        User.sharedInstance().books.remove(at: index)
         output.createRightBarButton(request: BookDetails.CreateRightBarButton.Request(title: "В корзину"))
     }
     
-    func addToBacketButtonTapped(_ sender: UIBarButtonItem) {
-        if (User.sharedInstance.books.contains(curentBook)) {
+    func addToBasketButtonTapped(_ sender: UIBarButtonItem) {
+        if (User.sharedInstance().books.contains(curentBook)) {
             output.removeBookFormBasket(request: BookDetails.RemoveBookFromBasket.Request())
         } else {
             output.addBookToBasket(request: BookDetails.AddBookToBasket.Request())

@@ -19,4 +19,8 @@ class BookTableViewCell: UITableViewCell {
         super.prepareForReuse()
         bookImageView.image = nil
     }
+    
+    override func didMoveToSuperview() {
+        self.layoutIfNeeded()
+    }
 }
